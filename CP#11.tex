@@ -163,6 +163,197 @@
 		Por lo tanto podemos decir que la probabilidad de que al menos $410$ bolas hayan sido negra es aproximadamente  $0.2611$
 	\end{flushleft}
 
+	\section*{Ejercicio 4 }
+
+	\begin{flushleft}
+		Sea un grupo de N personas, donde N es muy grande. A cada persona se le pregunta si conoce el Teorema de Bayes y se obtiene que la probabilidad de conocer dicho teorema es $p = 0.2$. Si se vuelve a formular la misma pregunta pero a un subgrupo de n personas del mismo grupo, cu\'al es el menor valor de n que se debe tomar para que la frecuencia relativa de conocer el Teorema de Bayes en el nuevo grupo $pn$ cumpla que $P(|pn - p| < 0;03) > 0;95$.
+	\end{flushleft}
 	
+	\begin{flushleft}
+		Vamos a usar el Teorema Central del L\'imite(Moivre-Laplace) para resolver el ejercicio 
+	\end{flushleft}
+	
+	\begin{flushleft}
+		Tenemos que  : 
+	\end{flushleft}
+	
+	\begin{equation*}
+		p=\frac{1}{5}  \hspace{1cm} p_n=\frac{\sum_{i=i}^{n}X_i}{n} \rightarrow Z \sim N\left(0,1\right)
+	\end{equation*}
+	
+
+	\begin{flushleft}
+		Por lo tanto tenemos : 
+	\end{flushleft}
+
+	\begin{equation*}
+		\displaystyle \frac{\sum_{i=i}^{n}X_i-\left(\frac{1}{5}\right)n}{\sqrt{\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)n}}
+	\end{equation*}
+
+
+	\begin{equation*}
+		\begin{array}{rcl}
+			\displaystyle P(\vert pn - p \vert < \frac{3}{100})&= & \displaystyle P\left( \vline \frac{\sum_{i=i}^{n}X_i}{n} - p  \vline  < \frac{3}{100}\right)
+			\\
+			\\
+			&=& \displaystyle P\left(\frac{1}{5}-\frac{3}{100}<\frac{\sum_{i=i}^{n}X_i}{n}<\frac{1}{5}+\frac{3}{100}\right)
+			\\
+			\\
+			&=&\displaystyle P(0.17<\frac{\sum_{i=i}^{n}X_i}{n}<0.23)
+			\\
+			\\
+			&=&\displaystyle P(0.17n<\sum_{i=i}^{n}X_i <0.23n)
+			\\
+			\\
+			&=& \displaystyle P\left(\frac{\left(\frac{17}{100}\right)n-\left(\frac{1}{5}\right)n}{\sqrt{\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)n}}<\frac{\sum_{i=i}^{n}X_i-\left(\frac{1}{5}\right)n}{\sqrt{\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)n}}<\frac{\left(\frac{23}{100}\right)n-\left(\frac{1}{5}\right)n}{\sqrt{\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)n}}\right)
+			\\
+			\\
+			&=&\displaystyle P(Z<\frac{0.03\sqrt{n}}{0.4})-P(Z<-\frac{0.03\sqrt{n}}{0.4})
+			\\
+			\\
+			&=&\displaystyle P(Z<0.075\sqrt{n})-P(Z<-0.075\sqrt{n})
+			\\
+			\\
+			&=&\displaystyle P(Z<0.075\sqrt{n})-(1-P(Z< 0.075\sqrt{n}))
+			\\
+			\\
+			&=&2 \displaystyle P \left(Z<0.075\sqrt{n}\right)-1
+		\end{array}
+	\end{equation*}
+
+
+	\begin{equation*}
+		\begin{array}{rcl}
+			2P(Z<0.075\sqrt{n})-1 &> &0.95
+			\\
+			\\
+			P(Z<0.075\sqrt{n})&>&(1+0.95)/2
+			\\
+			\\
+			P(Z<0.075\sqrt{n})&>&\frac{1.95}{2}
+			\\
+			\\
+			P(Z<0.075\sqrt{n})&>&0.975
+			\\
+			\\
+			\sqrt{n}&>&1.96*\frac{1000}{75}
+			\\
+			\\
+			n&>&(26.13)^2
+			\\
+			\\
+			n&>&682.77
+			\\
+			\\
+			n&\geq & 683
+		\end{array}
+	\end{equation*}
+
+	\begin{flushleft}
+		El menor valor que debe tomar $n$ es aproximadamente $683$
+	\end{flushleft}
+
+
+
+
+
+
+	\section*{Ejercicio 7 }
+
+	\begin{flushleft}	
+		De a\~nos pasados, un profesor sabe que el tiempo medio que le toma a un estudiante terminar una prueba final es una v.a. $X$ con media 75 minutos.
+	\end{flushleft}
+
+	\begin{flushleft}
+		a) D\'e una cota superior para la probabilidad de que un estudiante demore m\'as de 85 minutos en terminar el examen.
+	\end{flushleft}
+
+	\begin{flushleft}
+		Suponga adem\'as que el profesor conoce que la desviaci\'on est\'andar de X es de 5 minutos.
+	\end{flushleft}
+
+	\begin{flushleft}
+		b) ¿Qu\'e se puede decir de la probabilidad de que demore entre 65 y 85 minutos?
+	\end{flushleft}
+
+	\begin{flushleft}
+		c) ¿Cu\'antos estudiantes deben realizar el examen para asegurar con una probabilidad mayor o igual que 0;9 que el promedio del tiempo que le tomar\'a a cada estudiante ser\'a menor de 90 minutos?
+	\end{flushleft}
+
+
+
+	\begin{flushleft}
+		{\bf Respuesta inciso  a:}
+	\end{flushleft}
+
+	\begin{flushleft}
+		$X$ es una v.a no negativa que representa el tiempo medio que le toma a un estudiante terminar una prueba 
+		final. Utilizando la desigualdad de Markov:
+	\end{flushleft}
+
+	\begin{equation*}
+		P(x\geq 85)\leq \frac{EX}{85}=\frac{75}{17}
+	\end{equation*}
+
+
+	\begin{flushleft}
+		{\bf Respuesta inciso b:}
+	\end{flushleft}
+
+	\begin{flushleft}
+		tenemos que $\sigma^2=25$, $\mu=75$ aplicando la desigualdad de Chebyshev:\\
+	\end{flushleft}
+
+	\begin{equation*}
+		\begin{array}{rcl}
+			\displaystyle P(65 \leq X \leq 85)&= & \displaystyle P(-10 \leq X-75 \leq 10)
+			\\
+			\\
+			&=&P(|X-75|\leq 10)
+			\\
+			\\
+			&=&1-P(|X-75|\geq 10)
+			\\
+			\\
+			&\approx & \displaystyle  \frac{3}{4}
+		\end{array}
+	\end{equation*}
+
+
+	\begin{flushleft}
+		{\bf Respuesta inciso c:}
+	\end{flushleft}
+
+ 
+	\begin{flushleft}
+		Definiremos el promedio del tiempo que le tomara a cada estudiante terminar el examen como:
+	\end{flushleft}
+
+	\begin{equation*}
+		\frac{\sum_{i=1}^{n}X_i}{n}
+	\end{equation*}
+ 
+  	\begin{equation*}
+	  	\begin{array}{rcl}
+			P(\frac{\sum_{i=1}^{n}X_i}{n} \leq 90)\geq 0.9&= &P(\sum_{i=1}^{n}X_i \leq 90n)\geq 0.9
+			\\
+			\\
+			&=&P(\sum_{i=1}^{n}X_i -75n\leq 90n-75n)\geq 0.9
+			\\
+			\\
+			&=&P(\frac{\sum_{i=1}^{n}X_i -75n}{5\sqrt{n}}\leq \frac{15n}{5\sqrt{n}})\geq 0.9
+			\\
+			\\
+			&\approx & P(Z \leq 3\sqrt{n} )\geq 0.9
+			\\
+			\\
+			&\approx & P(Z\leq 3\sqrt{n})\geq P(Z\leq 1.29)\geq 0.9
+		\end{array}
+	\end{equation*}
+
+	\begin{flushleft}
+		Entonces al menos un estudiante debe realizar el examen para asegurar con una probabilidad mayor o igual que $0.9$ que el promedio del tiempo que le tomar\' al estudiante ser\'a menor de 90 minutos.
+	\end{flushleft}
+ 
 
 \end{document}	
