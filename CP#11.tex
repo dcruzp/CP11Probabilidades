@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	\title{Respuesta de la Clase Pr\'actica 11}
+	\author{Daniel De La Cruz Prieto}
+	\date{\today}
+	\maketitle
+	
+	\section*{Respuesta del ejercicio 1.}
+    \begin{flushleft}
+    	El ancho de la banda que utiliza un usuario de la univercidad es una variable aleatoria independiente para cada usuario y con la misam distribuci\'on . Se conoce que su valor esperado es 1Kb/s y la desviaci\'on estandar es 0.5Kb/s . suponga que hay 100 usuarios conectados en un momento determinado . Calcula la probabilidad de que el eancho de banda que se est\'a utilizando sobrepase los 96 Kb/s
+    \end{flushleft}
+    
+    \begin{flushleft}
+     	Por lo tant	tenemos que : $ n = 100 $  \hspace{1cm} $ \sigma = \sqrt{V(x) = 0.5}$
+    \end{flushleft}
+    
+    \begin{flushleft}
+	    Se quiere hallar :
+    \end{flushleft}
+    
+   	\begin{equation*}
+   	    P \left(\sum_{i=1}^{100} X_{i} = 96\right)
+   	\end{equation*}
+   	
+    \begin{flushleft}
+   	   Se supone la hip\'otesis del teorema central del l\'imite $ \left(Linderbeg - Levy\right)$ :
+    \end{flushleft}
+   	
+   	\begin{equation*}
+   	   \displaystyle\frac{\sum_{i=1}^{n} X_i -nu}{\sqrt{n}\sigma} \longrightarrow Z\sim N (0,1)
+   	\end{equation*}
+   	
+    \begin{flushleft}
+   	    Por lo tanto podemos decir :
+    \end{flushleft}
+   	\begin{equation*}
+		\begin{array}{rcl}
+	   	    \displaystyle P\left(\sum_{i=1}^{100}X_{i} \leq 96\right) & = & 1 -  P\left(X \leq  96\right) 
+	   	    \\
+	   	    \\
+	   	    & = &  \displaystyle P\left(\frac{\sum_{i=1}^{100}X_{i} - 100}{\sqrt{100}* \frac{1}{2}} \leq \frac{96 - 100}{\sqrt{100}* \frac{1}{2}}\right) 
+	   	    \\
+	   	    \\
+	   	    & = &  \displaystyle 1 - P\left(Z \leq -\frac{4}{5}\right)Z \sim N(0,1)
+	   	    \\
+	   	    \\
+	   	    & = &  \displaystyle 1 - P\left(Z \geq \frac{4}{5}\right)
+	   	    \\
+	   	    \\
+	   	    & = &  \displaystyle 1 -\left( 1 - P\left(Z \leq \frac{4}{5}\right)\right)
+	   	    \\
+	   	    \\
+	   	    & = &  \displaystyle P\left(Z \leq \frac{4}{5}\right)
+	   	    \\
+	   	    \\
+	        & = & 0.7881
+	    \end{array}
+   	\end{equation*}
+  	\section*{Respuesta del ejercicio 2.} 
+   	\begin{flushleft}
+   		El tama\~no de un aula de primer a\~no de la universidad es de ISO estudiantes . La direcci\'on de la unuversidad sabe de experiencias anteriores que en promedio solo el 30 \% de los aceptados por la univesidad realmente asistiran por lo que utiliza la pol\'itica de aprobar 450 solicitudes de admisio\'on . Calcula  la probabilidad de que m\'as de 150 estudiantes de primer a\~o asistan a esta universidad .
+   	\end{flushleft}
+   
+   	\begin{flushleft}
+   	   	$\to$ Tenemos $ E(X_k) = p = 0.3 $ y $V(X_k) = p\left(1-p\right) = 94.5$
+    \end{flushleft}
+    
+    \begin{flushleft}
+   		Se cumple la hip\'otesisi del teorema central del l\'imite (Moivre - Laplace)
+   	\end{flushleft}
+   	
+    \begin{equation*}
+	   	\displaystyle\frac{\sum_{i=1}^{n} X_i -np}{\sqrt{np\left(1-p\right)}} \longrightarrow Z\sim N (0,1)
+	\end{equation*}
+    \begin{flushleft}
+	   	Por lo tanto podemos decir : 
+    \end{flushleft}
+   	\begin{equation*}
+	   	\begin{array}{rcl}
+	   		\displaystyle P\left(\sum_{i=1}^{450}X_{i} > 150 \right) & = & \displaystyle P\left(\frac{\sum_{i=1}^{450}X_{i} - 450 * 0.3}{\sqrt{ 450 * (0.3)(1-(0.3)}}  > \frac{150 - 450 * (0.3)}{\sqrt{(450 * 0.3)*(1- 0.3)}}\right) 
+	   	  	\\
+	   	    \\
+	   		& = & \displaystyle P\left(\frac{\sum_{i=1}^{450}X_{i} - 135}{\sqrt{135(0.7)}}  > \frac{150 - 135}{(135)(0.7)}\right) 
+	   		\\
+	   		\\
+	   		& = & 	\displaystyle P\left(Z > \frac{15}{\sqrt{94.5)}}\right) 
+	   	\end{array}
+    \end{equation*}
+   	
+\end{document}	
