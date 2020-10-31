@@ -60,10 +60,13 @@
 	    \end{array}
 	\end{equation*}
 	   
+	\begin{flushleft}
+		Entonces podemos concluir que la probabilidad de que el ancho de banda sobrepase los $96$  kb/s es de aproximadamente  $0.7881$
+	\end{flushleft}
 
   	\section*{Respuesta del ejercicio 2.} 
    	\begin{flushleft}
-   		El tama\~no de un aula de primer a\~no de la universidad es de ISO estudiantes . La direcci\'on de la unuversidad sabe de experiencias anteriores que en promedio solo el 30 \% de los aceptados por la univesidad realmente asistiran por lo que utiliza la pol\'itica de aprobar 450 solicitudes de admisio\'on . Calcula  la probabilidad de que m\'as de 150 estudiantes de primer a\~o asistan a esta universidad .
+   		El tama\~no de un aula de primer a\~no de la universidad es de $150$ estudiantes . La direcci\'on de la universidad sabe de experiencias anteriores que en promedio solo el 30 \% de los aceptados por la univesidad realmente asistiran por lo que utiliza la pol\'itica de aprobar 450 solicitudes de admisi\'on . Calcula  la probabilidad de que m\'as de 150 estudiantes de primer a\~no asistan a esta universidad .
    	\end{flushleft}
    
    	\begin{flushleft}
@@ -85,11 +88,81 @@
 	   		\displaystyle P\left(\sum_{i=1}^{450}X_{i} > 150 \right) & = & \displaystyle P\left(\frac{\sum_{i=1}^{450}X_{i} - 450 * 0.3}{\sqrt{ 450 * (0.3)(1-(0.3)}}  > \frac{150 - 450 * (0.3)}{\sqrt{(450 * 0.3)*(1- 0.3)}}\right) 
 	   	  	\\
 	   	    \\
-	   		& = & \displaystyle P\left(\frac{\sum_{i=1}^{450}X_{i} - 135}{\sqrt{135(0.7)}}  > \frac{150 - 135}{(135)(0.7)}\right) 
+			   & = & \displaystyle P\left(\frac{\sum_{i=1}^{450}X_{i} - 135}{\sqrt{135(0.7)}}  > \frac{150 - 135}{(135)(0.7)}\right) 
 	   		\\
 	   		\\
-	   		& = & 	\displaystyle P\left(Z > \frac{15}{\sqrt{94.5)}}\right) 
+			& = & 	\displaystyle P\left(Z > \frac{15}{\sqrt{94.5)}}\right) 
+			\\
+			\\
+			& = & P\left(Z > 1.543\right)
+			\\
+			\\
+			& = & 1 - P\left(Z \leq 1.543\right)
+			\\
+			\\
+			& = & 1 - 0.9382
+			\\
+			\\
+			& = &0.0618
 	   	\end{array}
-    \end{equation*}
-   	
+	\end{equation*}
+	
+	\begin{flushleft}
+		Entonces podemos decir que la probabilidad de que mas de $150$ estudiantes de primer a\~no asistan a la universidad es de aproximadamente $0.0618$
+	\end{flushleft}
+	   
+	
+	\section*{Ejercicio 3 } 
+
+	\begin{flushleft}
+		Se tiene una caja con 3 bolas blancas y 2 bolas negras y se toma al azar una bola, despu\'es de anotar el color se devuelve a la caja. Si este experimento se repite 1000 veces de forma independiente, ¿cu\'al es la probabilidad de que al menos 410 bolas hayan sido bolas negras?
+	\end{flushleft}
+
+	\begin{flushleft}
+		Tenemos $n=1000$ $p=\frac{2}{5}=0.4$ $E(X_k) = p=0.4$ y $V (X_k) = p(1- p)=0.24$
+	\end{flushleft}
+	
+	\begin{flushleft}
+		Se cumple la hip\'otesis del Teorema Central del L\'imite (Moivre-Laplace):
+	\end{flushleft}
+
+
+	\begin{equation*}
+		\frac{\sum_{i=1}^{n}X_i-np}{\sqrt{np(1-p)}}
+	\end{equation*}
+
+
+	\begin{flushleft}
+		Entonces vamos a calcular la probabilidad , para esto tenemos : 
+	\end{flushleft}
+	
+	\begin{equation*}
+		\begin{array}{rcl}
+			P(\sum_{i=1}^{1000}X_i > 410)  	& = &P(\frac{\sum_{i=1}^{1000}X_i-400}{\sqrt{240}}> \frac{410-400}{\sqrt{240}})
+			\\
+			\\
+											& = & P(\frac{\sum_{i=1}^{1000}X_i-600}{\sqrt{240}}> -\frac{19\sqrt{15}}{6})
+			\\
+			\\
+											& = &P(Z>0.64)
+			\\
+			\\
+											& = & 1-P(Z<0.64)
+			\\
+			\\
+	                                         & = & 1-0.7389
+			\\
+			\\
+											 &\approx &  0.2611
+			\\
+			\\
+		\end{array}
+	\end{equation*}
+
+	\begin{flushleft}
+		Por lo tanto podemos decir que la probabilidad de que al menos $410$ bolas hayan sido negra es aproximadamente  $0.2611$
+	\end{flushleft}
+
+	
+
 \end{document}	
